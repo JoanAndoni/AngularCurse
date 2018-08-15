@@ -1,0 +1,90 @@
+<h2>{{title}}</h2>
+
+<hr/>
+
+<h3>Empleado estrella: / ngIf & Click</h3>
+<div *ngIf="trabajador_externo == false">
+  <button (click)="cambiarExterno(true)">Mostrar empleado</button>
+
+  <ul>
+    <li>{{trabajadores[0].nombre}}</li>
+    <li>{{trabajadores[0].edad}}</li>
+    <li>{{trabajadores[0].cargo}}</li>
+    <li *ngIf="trabajadores[0].contratado == true">Esta contratado</li>
+    <li *ngIf="trabajadores[0].contratado == false">No esta contratado</li>
+  </ul>
+</div>
+
+<div *ngIf="trabajador_externo == true">
+  <button (click)="cambiarExterno(false)">Mostrar trabajador</button>
+
+  <ul>
+    <li>{{empleado.nombre}}</li>
+    <li>{{empleado.edad}}</li>
+    <li>{{empleado.cargo}}</li>
+    <li *ngIf="empleado.contratado == true">Esta contratado</li>
+    <li *ngIf="empleado.contratado == false">No esta contratado</li>
+  </ul>
+</div>
+
+<hr/>
+
+<h3>Listado de empleados / ngFor</h3>
+<ul>
+  <li *ngFor="let empleado of trabajadores; let i = index">
+    <strong>Empleado {{i+1}}:</strong>
+    <ul>
+      <li>{{empleado.nombre}}</li>
+      <li>{{empleado.edad}}</li>
+      <li>{{empleado.cargo}}</li>
+      <li *ngIf="empleado.contratado == true">Esta contratado</li>
+      <li *ngIf="empleado.contratado == false">No esta contratado</li>
+    </ul>
+  </li>
+</ul>
+
+<hr/>
+
+<h3>Colores switch / ngSwitch</h3>
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase="'red'" [ngStyle]="{
+    'background':color,
+    'color': 'white',
+    'padding': '20px'
+    }">
+      Es de color ROJO
+  </li>
+
+  <li *ngSwitchCase="'green'" [ngStyle]="{
+    'background':color,
+    'color': 'white',
+    'padding': '20px'
+    }">
+      Es de color VERDE
+  </li>
+
+  <li *ngSwitchCase="'blue'" [ngStyle]="{
+    'background':color,
+    'color': 'white',
+    'padding': '20px'
+    }">
+      Es de color AZUL
+  </li>
+</ul>
+
+<hr/>
+
+<h3>Selector de colores / Two Way Data-binding</h3>
+<input type="text" [(ngModel)]="color_seleccionado"/>
+<pre>
+  <strong>Color elegido: </strong>
+  {{color_seleccionado}}
+</pre>
+<div [ngStyle]="{
+  'background':color_seleccionado,
+  'width':'200px',
+  'height':'200px',
+  'float':'right',
+  'margin-right':'30%'
+}"></div>
+<div style="clear:both"></div>

@@ -75,8 +75,16 @@
 <hr/>
 
 <h3>Selector de colores / Two Way Data-binding</h3>
+<button (click)="logColorSeleccionado()">MOSTRAR LOG</button>
 <input type="text" [(ngModel)]="color_seleccionado"/>
-<pre>
+<pre
+  [style.border]="color_seleccionado == 'red' ? '3px solid black':'1px solid violet'"
+  [ngClass]="{
+    fondoAzul:color_seleccionado == 'blue',
+    fondoVerde:color_seleccionado == 'green',
+    letraGrande: 1 == 1
+  }"
+  >
   <strong>Color elegido: </strong>
   {{color_seleccionado}}
 </pre>

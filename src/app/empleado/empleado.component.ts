@@ -33,4 +33,9 @@ export class EmpleadoComponent{
   cambiarExterno(valor){
     this.trabajador_externo = valor;
   }
+
+  logColorSeleccionado(){
+    console.log(this.color_seleccionado);
+  }
+
 }

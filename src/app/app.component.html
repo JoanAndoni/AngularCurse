@@ -1,7 +1,13 @@
-<!--
-<hr/>
-<fruta></fruta>
--->
+<h3>{{title}}</h3>
 
 <hr/>
-<empleado-tag></empleado-tag>
+<nav>
+  <a [routerLink]="['/home']" [routerLinkActive]= "['activo']"> Home </a>
+  <a [routerLink]="['/fruta']" [routerLinkActive]= "['activo']"> Fruta </a>
+  <a [routerLink]="['/empleado']" [routerLinkActive]= "['activo']"> Empleado </a>
+  <a [routerLink]="['/contacto']" [routerLinkActive]= "['activo']"> Contacto </a>
+</nav>
+
+<!-- <fruta></fruta> -->
+<!-- <empleado-tag></empleado-tag> -->
+<router-outlet></router-outlet>

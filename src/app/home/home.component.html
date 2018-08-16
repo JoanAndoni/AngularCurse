@@ -1,3 +1,17 @@
 <h2>{{titulo}}</h2>
 
+<h3>Valor del servicio: </h3>
 {{valorServicio}}
+
+<hr>
+<input type="text" [(ngModel)]="prenda_a_guardar">
+<button (click)="agregarPrenda()">Añadir prenda</button>
+<span *ngIf="prenda_a_guardar">La prenda a guardar es: <strong>{{prenda_a_guardar}}</strong></span>
+
+<h3>Valores del servicio en array </h3>
+<ul>
+  <li *ngFor="let prenda of listado_ropa; let i = index">
+    {{i}} {{prenda}}
+    <button (click)="eliminarPrenda(i)">Eliminar prenda</button>
+  </li>
+</ul>

@@ -13,9 +13,15 @@ export class HomeComponent{
   public listado_ropa:Array<string>;
   public prenda_a_guardar:string;
 
+  public fecha;
+  public nombre;
+
   constructor(
     private _ropaService: RopaService
-  ){}
+  ){
+    this.fecha = new Date(2018, 7, 22);
+    this.nombre  = 'JOAN andoni GonZaLEz RioZ';
+  }
 
   ngOnInit(){
     this.valorServicio = this._ropaService.prueba('Camizon');

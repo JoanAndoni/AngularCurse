@@ -1,5 +1,13 @@
 <h2>{{titulo}}</h2>
 
+<ul>
+  <li>{{fecha |date:'dd/MM/yyyy'}}</li>
+  <li>{{fecha | date:'fullDate' | uppercase | lowercase}}</li>
+  <li>{{nombre | uppercase}}</li>
+</ul>
+
+{{5 | conversor: 7}}
+
 <h3>Valor del servicio: </h3>
 {{valorServicio}}
 

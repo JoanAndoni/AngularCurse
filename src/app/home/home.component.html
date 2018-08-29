@@ -1,16 +1,19 @@
 <h2>{{titulo}}</h2>
 
+<h3>Pipes: </h3>
 <ul>
   <li>{{fecha |date:'dd/MM/yyyy'}}</li>
   <li>{{fecha | date:'fullDate' | uppercase | lowercase}}</li>
   <li>{{nombre | uppercase}}</li>
 </ul>
 
+<h3>My personalised pipe: </h3>
 {{5 | conversor: 7}}
 
 <h3>Valor del servicio: </h3>
 {{valorServicio}}
 
+<h3>Two way data binding to fill and show an array</h3>
 <hr>
 <input type="text" [(ngModel)]="prenda_a_guardar">
 <button (click)="agregarPrenda()">Añadir prenda</button>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { CochesComponent } from './coches/coches.component';
 
 import { ConversorPipe } from './pipes/conversor.pipe'
+
+//import { PeticionesService } from './services/peticiones.service';
 
 @NgModule({
   declarations: [
@@ -26,10 +29,13 @@ import { ConversorPipe } from './pipes/conversor.pipe'
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     HttpClientModule,
     routing
   ],
-  providers: [appRoutingProviders],
+  providers: [
+    appRoutingProviders
+  ],
   bootstrap: [AppComponent]
 })
 

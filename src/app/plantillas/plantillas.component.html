@@ -1,3 +1,18 @@
+<h4>Propiedades input de angular</h4>
+<componente-hijo
+  [texto1]="dato_externo"
+  [texto2]="identity"
+  (desde_el_hijo)="recibirDatos($event)"
+>
+</componente-hijo>
+
+<div *ngIf="datos_del_hijo">
+  <h4>{{datos_del_hijo.nombre}} {{datos_del_hijo.apellidos}}</h4>
+  <h4>Edad : {{datos_del_hijo.edad}}</h4>
+</div>
+
+<hr/>
+
 <h4>{{titulo}}</h4>
 
 <div *ngIf="administrador; then admin else noAdmin"></div>
